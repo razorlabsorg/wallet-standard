@@ -1,6 +1,6 @@
 {
 	"name": "@razorlabs/wallet-standard",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "A suite of standard utilities for implementing wallets based on the Wallet Standard.",
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
@@ -18,11 +18,12 @@
 		"src"
 	],
 	"scripts": {
-    "dev": "pnpm build --watch",
-		"build": "pnpm build:types && pnpm build:tsup",
+		"clean": "rm -rf tsconfig.tsbuildinfo ./dist",
+    	"dev": "pnpm build --watch",
+		"build": "pnpm clean && pnpm build:types && pnpm build:tsup",
 		"build:tsup": "tsup ./src/index.ts --format esm,cjs --sourcemap",
 		"build:types": "tsc --build",
-    "prepublishOnly": "pnpm build"
+    	"prepublishOnly": "pnpm build"
 	},
 	"keywords": [],
 	"author": "",

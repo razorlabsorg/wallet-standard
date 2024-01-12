@@ -1,14 +1,14 @@
 /** M2 Devnet */
-export const M2_DEVNET_CHAIN = 'm2:devnet';
+export const M2_DEVNET_CHAIN = 'movement:m2:devnet';
 
 /** M2 Testnet */
-export const M2_TESTNET_CHAIN = 'm2:testnet';
+export const M2_TESTNET_CHAIN = 'movement:m2:testnet';
 
 /** M2 Localnet */
-export const M2_LOCALNET_CHAIN = 'm2:localnet';
+export const M2_LOCALNET_CHAIN = 'movement:m2:localnet';
 
 /** M2 Mainnet */
-export const M2_MAINNET_CHAIN = 'm2:mainnet';
+export const M2_MAINNET_CHAIN = 'movement:m2:mainnet';
 
 export const M2_CHAINS = [
 	M2_DEVNET_CHAIN,

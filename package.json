@@ -18,12 +18,21 @@
 		"src"
 	],
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "pnpm build --watch",
+		"build": "pnpm build:types && pnpm build:tsup",
+		"build:tsup": "tsup ./src/index.ts --format esm,cjs --sourcemap",
+		"build:types": "tsc --build",
+    "prepublishOnly": "pnpm build"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"@mysten/sui.js": "^0.49.1",
 		"@wallet-standard/core": "^1.0.3"
+	},
+	"devDependencies": {
+		"tsup": "^8.0.1",
+		"typescript": "^5.3.3"
 	}
 }

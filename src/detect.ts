@@ -12,10 +12,8 @@ const REQUIRED_SUI_FEATURES: (keyof MinimallyRequiredSuiFeatures)[] = [
 // These features are absolutely required for wallets to function in the Aptos ecosystem.
 // Eventually, as wallets have more consistent support of features, we may want to extend this list.
 const REQUIRED_APTOS_FEATURES: (keyof MinimallyRequiredAptosFeatures)[] = [
-  'aptos:connect',
-  'aptos:signAndSubmitTransaction',
-  'aptos:signMessage',
-  'aptos:signTransaction'
+  'standard:connect',
+  'standard:events'
 ]
 
 export function isWalletWithRequiredSuiFeatureSet<AdditionalFeatures extends Wallet['features']>(

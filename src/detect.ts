@@ -1,28 +1,37 @@
 import { Wallet, WalletWithFeatures } from '@wallet-standard/core'
 
-import { MinimallyRequiredFeatures, WalletWithSuiFeatures } from './features'
+import { MinimallyRequiredSuiFeatures, MinimallyRequiredAptosFeatures } from './features'
 
 // These features are absolutely required for wallets to function in the M2 ecosystem.
 // Eventually, as wallets have more consistent support of features, we may want to extend this list.
-const REQUIRED_FEATURES: (keyof MinimallyRequiredFeatures)[] = [
+const REQUIRED_SUI_FEATURES: (keyof MinimallyRequiredSuiFeatures)[] = [
   'standard:connect',
   'standard:events'
 ]
 
-/** @deprecated Use isWalletWithRequiredFeatureSet instead since it provides more accurate typing! */
-export function isWalletWithSuiFeatures(
-  wallet: Wallet,
-  /** Extra features that are required to be present, in addition to the expected feature set. */
-  features: string[] = []
-): wallet is WalletWithSuiFeatures {
-  return [...REQUIRED_FEATURES, ...features].every((feature) => feature in wallet.features)
-}
+// These features are absolutely required for wallets to function in the Aptos ecosystem.
+// Eventually, as wallets have more consistent support of features, we may want to extend this list.
+const REQUIRED_APTOS_FEATURES: (keyof MinimallyRequiredAptosFeatures)[] = [
+  'aptos:connect',
+  'aptos:signAndSubmitTransaction',
+  'aptos:signMessage',
+  'aptos:signTransaction'
+]
 
-export function isWalletWithRequiredFeatureSet<AdditionalFeatures extends Wallet['features']>(
+export function isWalletWithRequiredSuiFeatureSet<AdditionalFeatures extends Wallet['features']>(
   wallet: Wallet,
   additionalFeatures: (keyof AdditionalFeatures)[] = []
-): wallet is WalletWithFeatures<MinimallyRequiredFeatures & AdditionalFeatures> {
-  return [...REQUIRED_FEATURES, ...additionalFeatures].every(
+): wallet is WalletWithFeatures<MinimallyRequiredSuiFeatures & AdditionalFeatures> {
+  return [...REQUIRED_SUI_FEATURES, ...additionalFeatures].every(
+    (feature) => feature in wallet.features
+  )
+}
+
+export function isWalletWithRequiredAptosFeatureSet<AdditionalFeatures extends Wallet['features']>(
+  wallet: Wallet,
+  additionalFeatures: (keyof AdditionalFeatures)[] = []
+): wallet is WalletWithFeatures<MinimallyRequiredAptosFeatures & AdditionalFeatures> {
+  return [...REQUIRED_APTOS_FEATURES, ...additionalFeatures].every(
     (feature) => feature in wallet.features
   )
 }

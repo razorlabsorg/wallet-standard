@@ -31,6 +31,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@aptos-labs/ts-sdk": "^1.4.0",
     "@mysten/sui.js": "^0.49.1",
     "@wallet-standard/core": "^1.0.3"
   },

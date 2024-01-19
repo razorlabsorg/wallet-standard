@@ -7,6 +7,7 @@ export const M1_TESTNET_CHAIN = 'movement:m1:testnet'
 /** M1 Localnet */
 export const M1_LOCALNET_CHAIN = 'movement:m1:localnet'
 
+export type ChainsId = `${string}:${string}` // e.g. 'aptos:devnet'
 /** M1 Mainnet */
 export const M1_MAINNET_CHAIN = 'movement:m1:mainnet'
 

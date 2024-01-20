@@ -19,9 +19,13 @@ export type AptosSignTransactionFeature = {
 }
 /** TODO: docs */
 export type AptosSignTransactionMethod = (
+  input: AptosSignTransactionInput
+) => Promise<UserResponse<AptosSignTransactionOutput>>
+
+export type AptosSignTransactionInput = {
   transaction: AnyRawTransaction,
   asFeePayer?: boolean
-) => Promise<UserResponse<AptosSignTransactionOutput>>
+}
 
 /** Output of signing transactions. */
 export type AptosSignTransactionOutput = AccountAuthenticator

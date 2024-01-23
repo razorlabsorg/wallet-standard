@@ -1,5 +1,6 @@
-import { AnyRawTransaction, PendingTransactionResponse } from '@aptos-labs/ts-sdk'
+import { TxnBuilderTypes, Types } from 'movement-sdk'
 import { UserResponse } from '../misc'
+import { IdentifierString, WalletAccount } from '@wallet-standard/core'
 /** Version of the feature. */
 export type AptosSignAndSubmitTransactionVersion = '1.0.0'
 /** Name of the feature. */
@@ -22,6 +23,10 @@ export type AptosSignAndSubmitTransactionMethod = (
 ) => Promise<UserResponse<AptosSignAndSubmitTransactionOutput>>
 
 /** TODO: docs */
-export type AptosSignAndSubmitTransactionInput = AnyRawTransaction
+export type AptosSignAndSubmitTransactionInput = {
+  tx: TxnBuilderTypes.RawTransaction
+  account: WalletAccount
+  chain: IdentifierString
+}
 /** Output of signing transactions. */
-export type AptosSignAndSubmitTransactionOutput = PendingTransactionResponse
+export type AptosSignAndSubmitTransactionOutput = Types.PendingTransaction

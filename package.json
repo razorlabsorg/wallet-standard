@@ -1,6 +1,6 @@
 {
   "name": "@razorlabs/wallet-standard",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A suite of standard utilities for implementing wallets based on the Wallet Standard.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -31,9 +31,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@aptos-labs/ts-sdk": "^1.4.0",
     "@mysten/sui.js": "^0.49.1",
-    "@wallet-standard/core": "^1.0.3"
+    "@wallet-standard/core": "^1.0.3",
+    "movement-sdk": "^1.0.4"
   },
   "devDependencies": {
     "prettier": "^3.2.4",

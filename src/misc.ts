@@ -1,10 +1,11 @@
-import { Account } from '@aptos-labs/ts-sdk'
+import { AptosAccount } from "movement-sdk"
+
 
 /** TODO: docs */
 export type TransactionHash = `0x${string}`
 /** TODO: docs */
 export type AccountInfo = {
-  account: Account
+  account: AptosAccount
   ansName?: string
 }
 /** TODO: docs */

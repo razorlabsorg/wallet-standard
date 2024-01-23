@@ -1,5 +1,6 @@
-import { AnyRawTransaction, AccountAuthenticator } from '@aptos-labs/ts-sdk'
+import { TxnBuilderTypes, Types } from 'movement-sdk'
 import { UserResponse } from '../misc'
+import { IdentifierString, WalletAccount } from '@wallet-standard/core'
 
 /** Version of the feature. */
 export type AptosSignTransactionVersion = '1.0.0'
@@ -23,9 +24,11 @@ export type AptosSignTransactionMethod = (
 ) => Promise<UserResponse<AptosSignTransactionOutput>>
 
 export type AptosSignTransactionInput = {
-  transaction: AnyRawTransaction,
-  asFeePayer?: boolean
+  transaction: TxnBuilderTypes.RawTransaction
+  account: WalletAccount
+  chain: IdentifierString
+  
 }
 
 /** Output of signing transactions. */
-export type AptosSignTransactionOutput = AccountAuthenticator
+export type AptosSignTransactionOutput = TxnBuilderTypes.AccountAuthenticator;

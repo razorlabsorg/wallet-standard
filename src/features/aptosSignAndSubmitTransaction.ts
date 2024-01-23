@@ -20,7 +20,7 @@ export type AptosSignAndSubmitTransactionFeature = {
 /** TODO: docs */
 export type AptosSignAndSubmitTransactionMethod = (
   transaction: AptosSignAndSubmitTransactionInput
-) => Promise<UserResponse<AptosSignAndSubmitTransactionOutput>>
+) => Promise<AptosSignAndSubmitTransactionOutput>
 
 /** TODO: docs */
 export type AptosSignAndSubmitTransactionInput = {

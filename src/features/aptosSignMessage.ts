@@ -17,7 +17,7 @@ export type AptosSignMessageFeature = {
 /** TODO: docs */
 export type AptosSignMessageMethod = (
   input: AptosSignMessageInput
-) => Promise<UserResponse<AptosSignMessageOutput>>
+) => Promise<AptosSignMessageOutput>
 
 /** TODO: docs */
 export type AptosSignMessageInput = {

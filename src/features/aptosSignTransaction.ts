@@ -21,7 +21,7 @@ export type AptosSignTransactionFeature = {
 /** TODO: docs */
 export type AptosSignTransactionMethod = (
   input: AptosSignTransactionInput
-) => Promise<UserResponse<AptosSignTransactionOutput>>
+) => Promise<AptosSignTransactionOutput>
 
 export type AptosSignTransactionInput = {
   transaction: TxnBuilderTypes.RawTransaction
@@ -31,4 +31,4 @@ export type AptosSignTransactionInput = {
 }
 
 /** Output of signing transactions. */
-export type AptosSignTransactionOutput = TxnBuilderTypes.AccountAuthenticator;
+export type AptosSignTransactionOutput = Uint8Array;

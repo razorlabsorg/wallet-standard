@@ -1,5 +1,4 @@
 import { TxnBuilderTypes, Types } from 'movement-sdk'
-import { UserResponse } from '../misc'
 import { IdentifierString, WalletAccount } from '@wallet-standard/core'
 
 /** Version of the feature. */

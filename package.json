@@ -1,43 +1,20 @@
 {
-  "name": "@razorlabs/wallet-standard",
-  "version": "0.1.8",
-  "description": "A suite of standard utilities for implementing wallets based on the Wallet Standard.",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
-    }
-  },
-  "sideEffects": false,
-  "files": [
-    "dist",
-    "src"
-  ],
+  "name": "wallet-standard",
+  "private": true,
   "scripts": {
-    "clean": "rm -rf tsconfig.tsbuildinfo ./dist",
-    "dev": "pnpm build --watch",
-    "build": "pnpm clean && pnpm build:types && pnpm build:tsup",
-    "build:tsup": "tsup ./src/index.ts --format esm,cjs --sourcemap",
-    "build:types": "tsc --build",
-    "prepublishOnly": "pnpm build",
-    "prettier:check": "prettier -c --ignore-unknown .",
-    "prettier:fix": "prettier -w --ignore-unknown ."
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@mysten/sui.js": "^0.49.1",
-    "@wallet-standard/core": "^1.0.3",
-    "movement-sdk": "^1.0.4"
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "prettier": "^3.2.4",
-    "tsup": "^8.0.1",
-    "typescript": "^5.3.3"
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "prettier": "^3.1.1",
+    "turbo": "latest"
+  },
+  "packageManager": "pnpm@8.9.0",
+  "engines": {
+    "node": ">=18"
   }
 }

@@ -1,5 +1,5 @@
 import { AptosClient } from 'movement-sdk'
-import { RawTransaction, UserResponse } from '../misc'
+import { RawTransaction } from '../misc'
 import { IdentifierString, WalletAccount } from '@wallet-standard/core'
 
 /** Version of the feature. */
@@ -21,7 +21,7 @@ export type AptosSignTransactionFeature = {
 /** TODO: docs */
 export type AptosSignTransactionMethod = (
   input: AptosSignTransactionInput
-) => Promise<UserResponse<AptosSignTransactionOutput>>
+) => Promise<AptosSignTransactionOutput>
 
 export interface AptosSignTransactionInput {
   transaction: RawTransaction

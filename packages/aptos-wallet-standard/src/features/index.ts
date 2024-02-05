@@ -8,12 +8,6 @@ import type {
 
 import type { AptosSignAndSubmitTransactionFeature } from './aptosSignAndSubmitTransaction'
 import { AptosSignMessageFeature } from './aptosSignMessage'
-import { AptosGetAccountFeature } from './aptosGetAccount'
-import { AptosConnectFeature } from './aptosConnect'
-import { AptosGetNetworkFeature } from './aptosGetNetwork'
-import { AptosOnAccountChangeFeature } from './aptosOnAccountChange'
-import { AptosOnNetworkChangeFeature } from './aptosOnNetworkChange'
-import { AptosChangeNetworkFeature } from './aptosChangeNetwork'
 import { AptosSignTransactionFeature } from './aptosSignTransaction'
 
 /**

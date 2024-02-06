@@ -1,3 +1,5 @@
+import { WalletAccount } from "@wallet-standard/core"
+
 /** Version of the feature. */
 export type AptosSignMessageVersion = '1.0.0'
 /** Name of the feature. */
@@ -24,6 +26,7 @@ export type AptosSignMessageInput = {
   chainId?: boolean
   message: string
   nonce: string
+  account: WalletAccount
 }
 
 /** TODO: docs */

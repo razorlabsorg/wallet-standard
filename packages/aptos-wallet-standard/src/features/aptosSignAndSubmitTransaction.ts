@@ -1,3 +1,4 @@
+import { IdentifierString, WalletAccount } from '@wallet-standard/core'
 import { PendingTransactionResponse, RawTransaction, UserResponse } from '../misc'
 /** Version of the feature. */
 export type AptosSignAndSubmitTransactionVersion = '1.0.0'
@@ -17,10 +18,14 @@ export type AptosSignAndSubmitTransactionFeature = {
 }
 /** TODO: docs */
 export type AptosSignAndSubmitTransactionMethod = (
-  transaction: AptosSignAndSubmitTransactionInput
+  input: AptosSignAndSubmitTransactionInput
 ) => Promise<AptosSignAndSubmitTransactionOutput>
 
 /** TODO: docs */
-export type AptosSignAndSubmitTransactionInput = RawTransaction
+export type AptosSignAndSubmitTransactionInput = {
+  transaction: RawTransaction
+  account: WalletAccount
+  chain: IdentifierString
+}
 /** Output of signing transactions. */
 export type AptosSignAndSubmitTransactionOutput = PendingTransactionResponse

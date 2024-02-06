@@ -21,7 +21,7 @@ export type AptosSignTransactionFeature = {
 /** TODO: docs */
 export type AptosSignTransactionMethod = (
   input: AptosSignTransactionInput
-) => Promise<AptosSignTransactionOutput>
+) => AptosSignTransactionOutput
 
 export interface AptosSignTransactionInput {
   transaction: RawTransaction

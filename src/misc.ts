@@ -1,4 +1,4 @@
-import { AptosClient } from "aptos"
+import { AptosClient } from 'aptos'
 
 export type TransactionHash = `0x${string}`
 

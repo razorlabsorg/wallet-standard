@@ -1,4 +1,4 @@
-import { WalletAccount } from "@wallet-standard/core"
+import { WalletAccount } from '@wallet-standard/core'
 
 /** Version of the feature. */
 export type AptosSignMessageVersion = '1.0.0'

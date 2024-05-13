@@ -1,6 +1,6 @@
 {
   "name": "@razorlabs/wallet-standard",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "dist/common/index.js",
   "module": "dist/esm/index.mjs",
@@ -27,8 +27,8 @@
   "scripts": {
     "clean": "rm -rf tsconfig.tsbuildinfo ./dist",
     "dev": "pnpm build --watch",
-    "build": "pnpm build:claer && tsup",
-    "build:claer": "rm -rf ./dist",
+    "build": "pnpm build:clear && tsup",
+    "build:clear": "rm -rf ./dist",
     "build:tsup": "tsup ./src/index.ts --format esm,cjs --sourcemap",
     "build:types": "tsc --build",
     "prepublishOnly": "pnpm build",

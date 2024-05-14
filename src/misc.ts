@@ -1,13 +1,9 @@
-import { AptosClient } from 'aptos'
+import { Network } from 'aptos'
 
 export type TransactionHash = `0x${string}`
 
-const aptosClient = new AptosClient('https://')
-
-export type RawTransaction = Awaited<ReturnType<typeof aptosClient.generateTransaction>>
-
 export interface NetworkInfo {
-  name: string // Name of the network.
+  name: Network // Name of the network.
   chainId: number // Chain ID of the network.
   url?: string // RPC URL of the network.
 }

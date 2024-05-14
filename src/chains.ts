@@ -1,25 +1,28 @@
-export type ChainsId = `${string}:${string}` // e.g. 'm1:devnet'
-/** M1 Devnet */
-export const M1_DEVNET_CHAIN = 'm1:devnet'
+// Copyright © Aptos Foundation
+// SPDX-License-Identifier: Apache-2.0
 
-/** M1 Testnet */
-export const M1_TESTNET_CHAIN = 'm1:testnet'
+export type ChainsId = `${string}:${string}` // e.g. 'aptos:devnet'
+/** APTOS Devnet */
+export const APTOS_DEVNET_CHAIN = 'aptos:devnet'
 
-/** M1 Localnet */
-export const M1_LOCALNET_CHAIN = 'm1:localnet'
+/** APTOS Testnet */
+export const APTOS_TESTNET_CHAIN = 'aptos:testnet'
 
-/** M1 Mainnet */
-export const M1_MAINNET_CHAIN = 'm1:mainnet'
+/** APTOS Localnet */
+export const APTOS_LOCALNET_CHAIN = 'aptos:localnet'
 
-export const M1_CHAINS = [
-  M1_DEVNET_CHAIN,
-  M1_TESTNET_CHAIN,
-  M1_LOCALNET_CHAIN,
-  M1_MAINNET_CHAIN
+/** APTOS Mainnet */
+export const APTOS_MAINNET_CHAIN = 'aptos:mainnet'
+
+export const APTOS_CHAINS = [
+  APTOS_DEVNET_CHAIN,
+  APTOS_TESTNET_CHAIN,
+  APTOS_LOCALNET_CHAIN,
+  APTOS_MAINNET_CHAIN
 ] as const
 
 export type AptosChain =
-  | typeof M1_DEVNET_CHAIN
-  | typeof M1_TESTNET_CHAIN
-  | typeof M1_LOCALNET_CHAIN
-  | typeof M1_MAINNET_CHAIN
+  | typeof APTOS_DEVNET_CHAIN
+  | typeof APTOS_TESTNET_CHAIN
+  | typeof APTOS_LOCALNET_CHAIN
+  | typeof APTOS_MAINNET_CHAIN

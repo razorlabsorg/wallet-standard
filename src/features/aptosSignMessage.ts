@@ -1,11 +1,13 @@
-import { WalletAccount } from '@wallet-standard/core'
+// Copyright © Aptos Foundation
+// SPDX-License-Identifier: Apache-2.0
+
+import { UserResponse } from '../misc'
 
 /** Version of the feature. */
 export type AptosSignMessageVersion = '1.0.0'
 /** Name of the feature. */
 export const AptosSignMessageNamespace = 'aptos:signMessage'
 
-/** TODO: docs */
 export type AptosSignMessageFeature = {
   /** Namespace for the feature. */
   [AptosSignMessageNamespace]: {
@@ -14,22 +16,19 @@ export type AptosSignMessageFeature = {
     signMessage: AptosSignMessageMethod
   }
 }
-/** TODO: docs */
+
 export type AptosSignMessageMethod = (
   input: AptosSignMessageInput
-) => Promise<AptosSignMessageOutput>
+) => Promise<UserResponse<AptosSignMessageOutput>>
 
-/** TODO: docs */
 export type AptosSignMessageInput = {
   address?: boolean
   application?: boolean
   chainId?: boolean
   message: string
   nonce: string
-  account: WalletAccount
 }
 
-/** TODO: docs */
 export type AptosSignMessageOutput = {
   address?: string
   application?: string
@@ -39,5 +38,4 @@ export type AptosSignMessageOutput = {
   nonce: string
   prefix: 'APTOS'
   signature: string | string[]
-  bitmap?: Uint8Array
 }

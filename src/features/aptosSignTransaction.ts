@@ -1,6 +1,8 @@
-import { AptosClient } from 'aptos'
-import { RawTransaction } from '../misc'
-import { IdentifierString, WalletAccount } from '@wallet-standard/core'
+// Copyright © Aptos Foundation
+// SPDX-License-Identifier: Apache-2.0
+
+import { AnyRawTransaction, AptosClient } from 'aptos'
+import { UserResponse } from '../misc'
 
 /** Version of the feature. */
 export type AptosSignTransactionVersion = '1.0.0'
@@ -18,16 +20,11 @@ export type AptosSignTransactionFeature = {
     signTransaction: AptosSignTransactionMethod
   }
 }
-/** TODO: docs */
-export type AptosSignTransactionMethod = (
-  input: AptosSignTransactionInput
-) => AptosSignTransactionOutput
 
-export interface AptosSignTransactionInput {
-  transaction: RawTransaction
-  account: WalletAccount
-  chain: IdentifierString
-}
+export type AptosSignTransactionMethod = (
+  transaction: AnyRawTransaction,
+  asFeePayer?: boolean
+) => Promise<UserResponse<AptosSignTransactionOutput>>
 
 /** Output of signing transactions. */
 export type AptosSignTransactionOutput = ReturnType<AptosClient['signTransaction']>

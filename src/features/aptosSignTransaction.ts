@@ -21,9 +21,15 @@ export type AptosSignTransactionFeature = {
   }
 }
 
+export type AptosSignTransactionInput<T = unknown> = {
+  function: string;
+  type: string;
+  type_arguments: string[];
+  arguments: T[];
+}
+
 export type AptosSignTransactionMethod = (
-  transaction: AnyRawTransaction,
-  asFeePayer?: boolean
+  input: AptosSignTransactionInput
 ) => Promise<UserResponse<AptosSignTransactionOutput>>
 
 /** Output of signing transactions. */

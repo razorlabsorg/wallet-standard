@@ -24,6 +24,11 @@ export type AptosSignAndSubmitTransactionMethod = (
   transaction: AptosSignAndSubmitTransactionInput
 ) => Promise<UserResponse<AptosSignAndSubmitTransactionOutput>>
 
-export type AptosSignAndSubmitTransactionInput = AnyRawTransaction
+export type AptosSignAndSubmitTransactionInput<T = unknown> = {
+  function: string;
+  type: string;
+  type_arguments: string[];
+  arguments: T[];
+}
 /** Output of signing transactions. */
 export type AptosSignAndSubmitTransactionOutput = Types.PendingTransaction

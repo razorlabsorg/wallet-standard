@@ -21,11 +21,11 @@ export type AptosSignTransactionFeature = {
   }
 }
 
-export type AptosSignTransactionInput<T = unknown> = {
+export type AptosSignTransactionInput = {
   function: string;
   type: string;
   type_arguments: string[];
-  arguments: T[];
+  arguments: [];
 }
 
 export type AptosSignTransactionMethod = (

@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-import { AnyRawTransaction, Types } from 'aptos'
+import { Types } from 'aptos'
 import { UserResponse } from '../misc'
 /** Version of the feature. */
 export type AptosSignAndSubmitTransactionVersion = '1.0.0'
@@ -21,14 +21,14 @@ export type AptosSignAndSubmitTransactionFeature = {
 }
 
 export type AptosSignAndSubmitTransactionMethod = (
-  transaction: AptosSignAndSubmitTransactionInput
+  input: AptosSignAndSubmitTransactionInput
 ) => Promise<UserResponse<AptosSignAndSubmitTransactionOutput>>
 
-export type AptosSignAndSubmitTransactionInput<T = unknown> = {
+export type AptosSignAndSubmitTransactionInput = {
   function: string;
   type: string;
   type_arguments: string[];
-  arguments: T[];
+  arguments: [];
 }
 /** Output of signing transactions. */
 export type AptosSignAndSubmitTransactionOutput = Types.PendingTransaction
